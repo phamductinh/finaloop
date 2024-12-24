@@ -10,8 +10,9 @@
 		.top {
 			display: flex;
 			flex-direction: column;
+			justify-content: flex-end;
 			width: 100%;
-            padding-top: 70px;
+			height: 100px;
 
 			p {
 				display: inline-block;
@@ -96,7 +97,7 @@
 					border: 1px solid #969493;
 					background: #fff;
 					font-weight: 600;
-                    font-size: 15px;
+					font-size: 15px;
 					display: flex;
 					align-items: center;
 					justify-content: center;

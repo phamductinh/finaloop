@@ -31,8 +31,10 @@ function Tab5({ onBack }) {
 						</button>
 					</div>
 				</div>
-				<div className="bottom" onClick={onBack}>
-					<button className="back">Back</button>
+				<div className="bottom">
+					<button onClick={onBack} className="back">
+						Back
+					</button>
 				</div>
 			</div>
 		</div>

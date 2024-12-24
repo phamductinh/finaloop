@@ -28,7 +28,7 @@ function Tab4({ onNext, onBack, goToLogin }) {
 						Book a call with your<p>Finaloop accounting expert</p>
 					</h3>
 					<div className="list-items">
-						<img src="/public/calendar.png" alt="" />
+						<img src="/calendar.png" alt="" />
 					</div>
 				</div>
 				<div className="bottom">

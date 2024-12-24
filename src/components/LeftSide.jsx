@@ -53,7 +53,7 @@ function LeftSide() {
 				</svg>
 				<h3>Trusted by thousands of consumer brands</h3>
 				<div className="quote">
-					<img src="/public/jack-benzaquen.png" alt="" />
+					<img src="/jack-benzaquen.png" alt="" />
 					<div className="quote-content">
 						Team is super responsive; they help with those confusing
 						accounting issues. The product velocity is also amazing.
@@ -80,7 +80,7 @@ function LeftSide() {
 			</div>
 			<img
 				className="background-img"
-				src="/public/abacus-horizontal-loop.png"
+				src="/abacus-horizontal-loop.png"
 				alt=""
 			/>
 		</div>

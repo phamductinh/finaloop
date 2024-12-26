@@ -3,9 +3,18 @@
 	height: 100vh;
 	overflow-y: auto;
 
+	@media (max-width: 1200px) {
+		flex-direction: column;
+	}
+
 	.right {
 		padding: 0 60px;
 		width: 50%;
+
+		@media (max-width: 1200px) {
+			width: 100%;
+			padding: 0 30px;
+		}
 
 		.top {
 			display: flex;
@@ -71,6 +80,10 @@
 					border: 1px solid #e3ddd8;
 					padding: 20px 15px;
 					cursor: pointer;
+
+					@media (max-width: 650px) {
+						width: 100%;
+					}
 
 					input {
 						border-radius: 50%;

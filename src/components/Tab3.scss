@@ -3,9 +3,18 @@
 	height: 100vh;
 	overflow-y: auto;
 
+	@media (max-width: 1200px) {
+		flex-direction: column;
+	}
+
 	.right {
 		padding: 0 60px;
 		width: 50%;
+
+		@media (max-width: 1200px) {
+			width: 100%;
+			padding: 0 30px;
+		}
 
 		.top {
 			display: flex;
@@ -44,6 +53,10 @@
 			height: calc(100vh - 190px);
 			overflow-y: auto;
 
+			@media (max-width: 1200px) {
+				height: auto;
+			}
+
 			h3 {
 				font-size: 36px;
 				margin-bottom: 30px;
@@ -70,6 +83,10 @@
 					border: 1px solid #e0e0e0;
 					width: 380px;
 					cursor: pointer;
+
+					@media (max-width: 650px) {
+						width: 100%;
+					}
 
 					p {
 						font-weight: 600;

@@ -27,8 +27,8 @@ function Tab5({ onBack }) {
 					</div>
 					<div className="list-content">
 						<h3>
-							{`We're almost finished,`}
-							<p>just a few last details</p>
+							Welcome to
+							<p>Finaloop</p>
 						</h3>
 						<div className="list-items">
 							{/* <form onSubmit={handleSubmit}>

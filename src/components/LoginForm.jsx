@@ -90,16 +90,10 @@ function LoginForm({ onClose }) {
 		if (!email) {
 			newErrors.email = "Email is required";
 			isValid = false;
-		} else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-			newErrors.email = "Invalid email format";
-			isValid = false;
 		}
 
 		if (!password) {
 			newErrors.password = "Password is required";
-			isValid = false;
-		} else if (password.length < 8) {
-			newErrors.password = "Password must be at least 8 characters";
 			isValid = false;
 		}
 

